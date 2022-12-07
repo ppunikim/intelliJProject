@@ -1,0 +1,31 @@
+server:
+  port: 9098
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  error:
+    include-exception: false
+    include-stacktrace: never
+    path: '/error'
+    whitelabel:
+      enabled: true
+
+server.error:
+
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/workDB?autoReconnect=true
+    username: 'sunshine'
+    password: '!Korea8080'
+    driver-class-name: com.mysql.jdbc.Driver
+
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
