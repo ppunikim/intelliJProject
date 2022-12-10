@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 계좌명세서 -->
+<mapper namespace="HomeDAO">
+    <select id="getList" resultType="com.ppuni.memo.DTO.HomeDTO">
+        SELECT
+            *
+        FROM
+            tbl_memo
+    </select>
+    <select id="insertPost" parameterType="com.ppuni.memo.DTO.HomeDTO" resultType="com.ppuni.memo.DTO.HomeDTO">
+    INSERT INTO tbl_memo (
+       seq,
+       userid,
+       location,
+       img,
+       yyyymm,
+       feeling
+    ) VALUES (
+        #{seq},
+        #{userid},
+        #{location},
+        #{img},
+        #{yyyymm},
+        #{feeling}
+    )
+
+    </select>
+</mapper>

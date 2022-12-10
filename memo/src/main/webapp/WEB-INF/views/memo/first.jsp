@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.util.Calendar" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
@@ -28,8 +29,13 @@
 </div>
 
 <div id="first_body">
-    <%-- <div>${item.image}</div> --%>
-    <div><img src="../assets/sunflower.jpg" class="sun_flower"></div>
+    <c:forEach var="getList" items="${item}" varStatus="idx">
+        <div>${item.seq}</div>
+        <div>${item.userid}</div>
+        <div>${item.yyyymm}</div>
+    </c:forEach>
+
+    <!-- <div><img src="../assets/sunflower.jpg" class="sun_flower"></div> -->
 </div>
 
 <div id="first_footer" class="flex">

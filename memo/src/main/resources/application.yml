@@ -22,10 +22,17 @@ spring:
       suffix: .jsp
 
   datasource:
-    url: jdbc:mysql://localhost:3306/workDB?autoReconnect=true
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/memoProject?autoReconnect=true&serverTimezone=Asia/Seoul
     username: 'sunshine'
     password: '!Korea8080'
-    driver-class-name: com.mysql.jdbc.Driver
 
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+
+mybatis:
+  type-aliases-package: com.ppuni.memo.DAO.HomeDAO
