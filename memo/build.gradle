@@ -31,6 +31,10 @@ dependencies {
 	implementation 'javax.servlet.jsp:javax.servlet.jsp-api:2.3.1'
 	implementation 'javax.servlet:jstl:1.2'
 	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:9.0.67'
+	// DB 연결
+	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+	runtimeOnly 'mysql:mysql-connector-java'
+
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'com.mysql:mysql-connector-j'
@@ -61,3 +65,4 @@ sourceSets {
 		}
 	}
 }
+

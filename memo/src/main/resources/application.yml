@@ -22,10 +22,18 @@ spring:
       suffix: .jsp
 
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/memoProject?autoReconnect=true&serverTimezone=Asia/Seoul
+    url: jdbc:mysql://localhost:3306/memoProject?serverTimeZone=UTC&CharacterEncoding=UTF-8
     username: 'sunshine'
     password: '!Korea8080'
+    hikari:
+      maximum-pool-size: 10
+      connection-timeout: 5000
+      connection-init-sql: SELECT 1
+      validation-timeout: 2000
+      minimum-idle: 10
+      idle-timeout: 600000
+      max-lifetime: 1800000
+    driver-class-name: com.mysql.jdbc.Driver
 
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
@@ -33,6 +41,11 @@ spring:
   jackson:
     serialization:
       fail-on-empty-beans: false
+
+  devtools:
+    remote:
+      restart:
+        enabled: true
 
 mybatis:
   type-aliases-package: com.ppuni.memo.DAO.HomeDAO
